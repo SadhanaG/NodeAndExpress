@@ -16,9 +16,8 @@ var sel_days = new Array(7);
 //The getDay() method returns the day of the week (from 0 to 6) for the specified date.
 var day = sel_days[new_date.getDay()] ;
 
-// A middleware with no mount path; gets executed for every request to the app
+//Send request to the server
 app.use(function (req, res) {
-  //Send request to the server
   res.send('Time:', day);
 });
 
