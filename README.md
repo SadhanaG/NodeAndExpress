@@ -12,27 +12,44 @@ var app = express();
 
 ```
 
-> Second you need to send a request for new Date()
+>Second variable for new Date()
 
 ```javascript
 
-var ndate = new Date();
+var new_date = new Date();
 
-app.use(function (req, res, next) {
-  res.send('Time:', ndate.toDateString());
-  next();
+```
+
+>Third create an array for days
+
+```javascript
+
+var sel_days = new Array(7);
+    sel_days[0] = 'Sunday';
+    ...
+    sel_days[6] = 'Saturday';
+
+//The getDay() method returns the day of the week (from 0 to 6) for the specified date.
+var day = sel_days[new_date.getDay()] ;
+
+```
+
+>Forth send request to the server
+
+```javascript
+
+app.use(function (req, res) {
+  res.send('Time:', day);
 });
 
 ```
->> Third call the server
+
+>At the end, Start the server
 
 ```javascript
 
 var server = app.listen(3000, function () {
-
-  var host = server.address().address;
-  var port = server.address().port;
-
+  ...
   console.log('Example app listening at http://%s:%s', host, port);
 
 });
