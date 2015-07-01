@@ -1,7 +1,7 @@
 Node and Express
 ----------------
 
-### Get system Date into your program using express()
+#### Get system Date into your program using express()
 
 >First you need to call the express()
 
@@ -38,4 +38,3 @@ var server = app.listen(3000, function () {
 });
 
 ```
-___
