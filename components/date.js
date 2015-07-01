@@ -2,25 +2,27 @@
 var express = require('express');
 var app = express();
 // Second create a variable to call the system Date which contain the days too.
-var ndate = new Date();
+var new_date = new Date();
 // To show the days, we need to create an Array
-var ndays = new Array(7);
-    ndays[0] = 'Sunday';
-    ndays[1] = 'Monday';
-    ndays[2] = 'Tuesday';
-    ndays[3] = 'Wednesday';
-    ndays[4] = 'Thursday'
-    ndays[5] = 'Friday';
-    ndays[6] = 'Saturday';
-var d = ndays[ndate.getDay()] ;
+var sel_days = new Array(7);
+    sel_days[0] = 'Sunday';
+    sel_days[1] = 'Monday';
+    sel_days[2] = 'Tuesday';
+    sel_days[3] = 'Wednesday';
+    sel_days[4] = 'Thursday'
+    sel_days[5] = 'Friday';
+    sel_days[6] = 'Saturday';
+
+//The getDay() method returns the day of the week (from 0 to 6) for the specified date.
+var day = sel_days[new_date.getDay()] ;
 
 // A middleware with no mount path; gets executed for every request to the app
-app.use(function (req, res, next) {
-  res.send('Time:', d);
-  next();
+app.use(function (req, res) {
+  //Send request to the server
+  res.send('Time:', day);
 });
 
-//Send the HTTP request 
+// Start the server
 var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
