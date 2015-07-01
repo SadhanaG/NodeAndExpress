@@ -12,7 +12,7 @@ var app = express();
 
 ```
 
-> Sencond you need to send a request for new Date()
+> Second you need to send a request for new Date()
 
 ```javascript
 
