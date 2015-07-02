@@ -2,19 +2,19 @@
 var express = require('express');
 var app = express();
 // Second create a variable to call the system Date which contain the days too.
-var new_date = new Date();
+var currentDate = new Date();
 // To show the days, we need to create an Array
-var sel_days = new Array(7);
-    sel_days[0] = 'Sunday';
-    sel_days[1] = 'Monday';
-    sel_days[2] = 'Tuesday';
-    sel_days[3] = 'Wednesday';
-    sel_days[4] = 'Thursday'
-    sel_days[5] = 'Friday';
-    sel_days[6] = 'Saturday';
+var daysOfTheWeek = new Array(7);
+    daysOfTheWeek[0] = 'Sunday';
+    daysOfTheWeek[1] = 'Monday';
+    daysOfTheWeek[2] = 'Tuesday';
+    daysOfTheWeek[3] = 'Wednesday';
+    daysOfTheWeek[4] = 'Thursday'
+    daysOfTheWeek[5] = 'Friday';
+    daysOfTheWeek[6] = 'Saturday';
 
 //The getDay() method returns the day of the week (from 0 to 6) for the specified date.
-var day = sel_days[new_date.getDay()] ;
+var day = daysOfTheWeek[currentDate.getDay()] ;
 
 //Send request to the server
 app.use(function (req, res) {
